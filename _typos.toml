@@ -1,6 +1,7 @@
 [default.extend-words]
 PNGs = "PNGs"
 PN = "PN"
+ANC = "ANC"
 
 [files]
 extend-exclude = ["node_modules/", "package-lock.json"]
