@@ -1,0 +1,531 @@
+{
+  "capabilities": {
+    "developerArtifacts": {
+      "agentLoop": {
+        "enabled": false
+      },
+      "artifactTypes": [
+        "decision",
+        "plan",
+        "spec",
+        "product-brief",
+        "e2e-product-system-atlas",
+        "opportunity-brief",
+        "business-case",
+        "stakeholder-map",
+        "data-dictionary",
+        "metric-definition",
+        "lineage-map",
+        "research-synthesis",
+        "claim-evidence-matrix",
+        "high-fidelity-prototype",
+        "interaction-state-board",
+        "journey-map",
+        "visual-review",
+        "handoff",
+        "evidence-pack",
+        "blast-radius",
+        "architecture-view",
+        "model-view",
+        "review-dashboard",
+        "agent-loop",
+        "trace-review",
+        "eval-report",
+        "learning-proposal",
+        "model-diff"
+      ],
+      "canonical": {
+        "formats": [
+          "markdown",
+          "toon",
+          "json",
+          "yaml"
+        ],
+        "paths": [
+          "docs",
+          "docs/artifacts/source"
+        ],
+        "tooling": [
+          "specgraph",
+          "agent-docs"
+        ]
+      },
+      "enabled": true,
+      "htmlPolicy": {
+        "allowExternalAssets": false,
+        "allowExternalScripts": false,
+        "allowInlineJavaScript": false,
+        "allowNetworkCalls": false,
+        "interactionLanes": {
+          "default": {
+            "allowInlineJavaScript": false,
+            "allowedPatterns": [
+              "radio tabs",
+              "details summary",
+              "anchor navigation",
+              "inline svg states"
+            ],
+            "csp": "default-src 'none'; script-src 'none'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+            "name": "css-only"
+          },
+          "reviewed-inline-js": {
+            "allowInlineJavaScript": false,
+            "blockedApis": [
+              "fetch",
+              "XMLHttpRequest",
+              "WebSocket",
+              "EventSource",
+              "sendBeacon",
+              "serviceWorker",
+              "document.cookie",
+              "localStorage",
+              "sessionStorage"
+            ],
+            "name": "reviewed-inline-js",
+            "requiresCheckerSupport": true,
+            "requiresCspChange": true,
+            "requiresHumanReview": true,
+            "requiresManifestFlag": "htmlInteractionLane: reviewed-inline-js",
+            "status": "reserved-not-enabled"
+          }
+        },
+        "requireSemanticHTML": true,
+        "requiredCSP": "default-src 'none'; script-src 'none'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "role": "generated-review-surface",
+        "selfContained": true
+      },
+      "infographicPolicy": {
+        "allowedStaticOutputs": [
+          "inline-svg",
+          "static-html",
+          "data-url-image"
+        ],
+        "browserRuntime": "blocked-by-default-html-policy",
+        "defaultMode": "source-spec-to-static-review",
+        "enabled": true,
+        "selectionRules": [
+          "use Mermaid for authored architecture/process/model diagrams already represented as Mermaid text",
+          "use Vega-Lite as the default chart grammar for source-backed metrics and comparison charts",
+          "use Observable Plot for compact exploratory or statistical chart specs",
+          "use D3 when the artifact needs a bespoke static infographic layout",
+          "use Graphviz for dependency, lineage, and relationship graphs",
+          "use ECharts only as a generation-time renderer or static equivalent, not as a browser runtime",
+          "use RAWGraphs for design-led exported SVGs with tabular source data",
+          "use Chart.js only through server-rendered/static output or an equivalent static chart"
+        ],
+        "specFence": "artifact-infographic",
+        "tools": [
+          {
+            "id": "mermaid",
+            "label": "Mermaid",
+            "output": "pre-rendered inline SVG or static markup",
+            "role": "architecture, workflow, sequence, and model diagrams"
+          },
+          {
+            "id": "vega-lite",
+            "label": "Vega-Lite",
+            "output": "static SVG generated from source specs",
+            "role": "default declarative charts for metrics, comparisons, and evidence dashboards"
+          },
+          {
+            "id": "observable-plot",
+            "label": "Observable Plot",
+            "output": "static SVG generated from source specs",
+            "role": "compact exploratory charts and statistical views"
+          },
+          {
+            "id": "d3",
+            "label": "D3",
+            "output": "static SVG generated during artifact generation",
+            "role": "custom infographic layouts when canned charts are not expressive enough"
+          },
+          {
+            "id": "graphviz",
+            "label": "Graphviz",
+            "output": "static SVG generated from DOT or structured edges",
+            "role": "node-edge dependency, lineage, and relationship maps"
+          },
+          {
+            "id": "echarts",
+            "label": "Apache ECharts",
+            "output": "static SVG or PNG generated outside the browser runtime",
+            "role": "dashboard-style chart families when a richer chart grammar is useful"
+          },
+          {
+            "id": "rawgraphs",
+            "label": "RAWGraphs",
+            "output": "exported SVG copied into the generated review surface",
+            "role": "design-led or unusual infographic forms using tabular data"
+          },
+          {
+            "id": "chartjs",
+            "label": "Chart.js",
+            "output": "server-rendered image or static SVG equivalent",
+            "role": "simple familiar charts when existing source data already matches Chart.js conventions"
+          }
+        ]
+      },
+      "manifest": {
+        "freshness": {
+          "hashAlgorithm": "sha256",
+          "trackSourceHash": true
+        },
+        "path": "docs/artifacts/artifacts.manifest.json",
+        "requireEvidence": false,
+        "requireSource": true,
+        "schemaVersion": 1
+      },
+      "mediaOutputs": {
+        "enabled": false
+      },
+      "modelPolicy": {
+        "allowedModelKinds": [
+          "sequence",
+          "state",
+          "class",
+          "domain",
+          "context",
+          "container",
+          "component",
+          "dynamic",
+          "deployment",
+          "dependency",
+          "use-case",
+          "activity",
+          "architecture-space"
+        ],
+        "allowedNotations": [
+          "mermaid",
+          "markdown",
+          "toon",
+          "plantuml",
+          "structurizr"
+        ],
+        "c4": {
+          "experimental": true,
+          "levels": [
+            "context",
+            "container",
+            "component",
+            "dynamic",
+            "deployment"
+          ],
+          "notation": "mermaid"
+        },
+        "canonicalSource": true,
+        "defaultReviewEmbedding": "inline-svg",
+        "generatedReviewOnly": true,
+        "renderDiagramsOffline": true,
+        "uml": {
+          "allowedFacets": {
+            "uwe": [
+              "content",
+              "navigation",
+              "presentation",
+              "process",
+              "access",
+              "adaptation"
+            ]
+          },
+          "allowedSourceExtensions": [
+            ".md",
+            ".toon",
+            ".mmd",
+            ".puml",
+            ".plantuml",
+            ".dsl",
+            ".json",
+            ".yaml",
+            ".yml"
+          ],
+          "authoredOrEvidenceKinds": [
+            "class",
+            "dynamic"
+          ],
+          "defaultDiffMethod": "source",
+          "enabled": true,
+          "evidenceDefaultKinds": [
+            "dependency"
+          ],
+          "generatedReviewRequired": true,
+          "inventory": "docs/artifacts/source/models/model-inventory.md",
+          "methodModelKinds": {
+            "c4": [
+              "context",
+              "container",
+              "component",
+              "dynamic",
+              "deployment",
+              "architecture-space"
+            ],
+            "evidence": [
+              "dependency",
+              "architecture-space",
+              "class",
+              "dynamic",
+              "deployment"
+            ],
+            "uml": [
+              "use-case",
+              "activity",
+              "sequence",
+              "state",
+              "class",
+              "domain"
+            ],
+            "uwe": [
+              "use-case",
+              "activity",
+              "sequence",
+              "state",
+              "domain",
+              "component"
+            ]
+          },
+          "methods": [
+            "uml",
+            "uwe",
+            "c4",
+            "evidence"
+          ],
+          "mode": "uml-first",
+          "reviewDir": "generated/review/models",
+          "reviewRequirement": {
+            "baseline": "optional",
+            "uml-first": "required-for-ready-model-artifacts"
+          },
+          "semanticDiff": false,
+          "sourceDir": "docs/artifacts/source/models"
+        }
+      },
+      "modeling": {
+        "autoDetectModelImpact": true,
+        "canonicalInventory": "docs/artifacts/source/models/model-inventory.md",
+        "defaultForFreshSetup": true,
+        "enabled": true,
+        "humanReviewFormat": "html",
+        "mode": "uml-first",
+        "reviewDir": "generated/review/models",
+        "sourceDir": "docs/artifacts/source/models"
+      },
+      "profile": "dual",
+      "requestedProfile": "auto",
+      "reviewSurface": {
+        "commitGenerated": false,
+        "format": "html",
+        "openMode": "when-supported",
+        "openPolicy": {
+          "claudeDesktop": "use built-in browser or preview tool when available",
+          "cliFallback": "system-default-browser",
+          "codexApp": "use Browser plugin when available",
+          "headlessFallback": "print-file-url",
+          "preferHostBrowserTool": true
+        },
+        "outDir": "generated/review"
+      },
+      "specialization": "",
+      "visualArtifactPolicy": {
+        "agentTeam": [
+          {
+            "agent": "research-writer",
+            "owns": [
+              "evidence",
+              "citations",
+              "claim strength",
+              "research gaps"
+            ]
+          },
+          {
+            "agent": "requirements-analyst",
+            "owns": [
+              "product intent",
+              "requirements",
+              "acceptance criteria",
+              "assumptions"
+            ]
+          },
+          {
+            "agent": "delivery-manager",
+            "owns": [
+              "business viability",
+              "stakeholder impact",
+              "risk and rollout"
+            ]
+          },
+          {
+            "agent": "backend-engineer",
+            "owns": [
+              "data structures",
+              "schemas",
+              "integrity constraints"
+            ]
+          },
+          {
+            "agent": "ux-researcher",
+            "owns": [
+              "task evidence",
+              "prototype critique",
+              "high-fidelity review"
+            ]
+          },
+          {
+            "agent": "system-modeler",
+            "owns": [
+              "model impact",
+              "workflow and structure diagrams"
+            ]
+          },
+          {
+            "agent": "quality-reviewer",
+            "owns": [
+              "evidence gates",
+              "freshness",
+              "readiness risks"
+            ]
+          }
+        ],
+        "canonicalFirst": true,
+        "defaultHumanSurface": "high-fidelity-html",
+        "doctrine": "visual-source-first",
+        "enabled": true,
+        "families": [
+          {
+            "name": "product",
+            "primaryAgents": [
+              "requirements-analyst",
+              "delivery-manager",
+              "system-modeler",
+              "ux-researcher",
+              "test-designer"
+            ],
+            "reviewDir": "generated/review/product",
+            "reviewKinds": [
+              "product-brief",
+              "feature-map",
+              "decision-dashboard",
+              "uwe-navigation-atlas"
+            ],
+            "sourceDir": "docs/artifacts/source/product",
+            "sourceKinds": [
+              "prd",
+              "opportunity-brief",
+              "feature-map",
+              "acceptance-criteria",
+              "roadmap",
+              "e2e-product-system-atlas"
+            ]
+          },
+          {
+            "name": "business",
+            "primaryAgents": [
+              "requirements-analyst",
+              "delivery-manager"
+            ],
+            "reviewDir": "generated/review/business",
+            "reviewKinds": [
+              "strategy-review",
+              "assumption-dashboard",
+              "stakeholder-map"
+            ],
+            "sourceDir": "docs/artifacts/source/business",
+            "sourceKinds": [
+              "business-model",
+              "pricing-assumptions",
+              "stakeholder-map",
+              "risk-register"
+            ]
+          },
+          {
+            "name": "data",
+            "primaryAgents": [
+              "backend-engineer",
+              "test-designer"
+            ],
+            "reviewDir": "generated/review/data",
+            "reviewKinds": [
+              "schema-map",
+              "metric-dashboard",
+              "data-quality-review"
+            ],
+            "sourceDir": "docs/artifacts/source/data",
+            "sourceKinds": [
+              "schema",
+              "data-dictionary",
+              "metric-definition",
+              "lineage-map",
+              "quality-rules"
+            ]
+          },
+          {
+            "name": "research",
+            "primaryAgents": [
+              "research-writer",
+              "ux-researcher"
+            ],
+            "reviewDir": "generated/review/research",
+            "reviewKinds": [
+              "research-board",
+              "evidence-map",
+              "confidence-dashboard"
+            ],
+            "sourceDir": "docs/artifacts/source/research",
+            "sourceKinds": [
+              "claim-evidence-matrix",
+              "literature-theme-map",
+              "interview-synthesis",
+              "assumption-register"
+            ]
+          },
+          {
+            "name": "ux",
+            "primaryAgents": [
+              "ux-researcher",
+              "web-engineer"
+            ],
+            "reviewDir": "generated/review/ux",
+            "reviewKinds": [
+              "high-fidelity-prototype",
+              "state-board",
+              "journey-map",
+              "accessibility-review"
+            ],
+            "sourceDir": "docs/artifacts/source/ux",
+            "sourceKinds": [
+              "design-brief",
+              "component-state-spec",
+              "interaction-flow",
+              "prototype-source"
+            ]
+          }
+        ],
+        "generatedReviewOnly": true,
+        "lowFidelityPolicy": "scratch-only-not-canonical",
+        "readinessGates": [
+          "canonical source exists before generated review",
+          "manifest entry links source, review surface, owner, evidence, and freshness",
+          "human review surface is visual when product, business, data, research, or UX comprehension benefits from layout",
+          "source-declared infographic specs render to static review markup without browser runtimes",
+          "high-fidelity is required for UI and customer-facing workflow review",
+          "synthetic user or agent simulation evidence is labelled separately from real user evidence",
+          "HTML policy passes before handoff",
+          "UWE navigation atlases cover navigable nodes, actions, screenshots, side effects, and untested branches without claiming exhaustive state-space coverage"
+        ],
+        "reviewDirs": [
+          "generated/review/product",
+          "generated/review/business",
+          "generated/review/data",
+          "generated/review/research",
+          "generated/review/ux"
+        ],
+        "sourceDirs": [
+          "docs/artifacts/source/product",
+          "docs/artifacts/source/business",
+          "docs/artifacts/source/data",
+          "docs/artifacts/source/research",
+          "docs/artifacts/source/ux"
+        ]
+      }
+    }
+  },
+  "version": 1
+}

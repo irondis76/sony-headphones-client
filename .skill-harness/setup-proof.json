@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "project": {
+    "targetDir": "E:\\dishanthk\\Projects\\sony-headphones-client",
+    "operationDir": "E:\\dishanthk\\Projects\\sony-headphones-client",
+    "monorepo": false,
+    "scope": "auto",
+    "packageManager": "npm"
+  },
+  "profiles": {
+    "requestedDeveloperArtifacts": "auto",
+    "effectiveDeveloperArtifacts": "dual",
+    "requestedModeling": "auto",
+    "effectiveModeling": "uml-first"
+  },
+  "tools": {
+    "agentDocs": {
+      "status": "quality-gates-installed",
+      "package": "github:45ck/agent-docs",
+      "command": "npx agent-docs install-gates --quality"
+    },
+    "agentStack": {
+      "status": "scaffolded",
+      "paths": [
+        ".skill-harness/agent-stack.json"
+      ]
+    },
+    "beads": {
+      "status": "skipped"
+    },
+    "claudeSettings": {
+      "status": "written",
+      "paths": [
+        ".claude/settings.json"
+      ]
+    },
+    "developerArtifacts": {
+      "status": "scaffolded",
+      "paths": [
+        ".skill-harness/project.json",
+        "docs/artifacts/",
+        "generated/review/",
+        "scripts/check-artifact-manifest.mjs",
+        "scripts/check-artifact-html-policy.mjs",
+        "scripts/open-artifact-review.mjs"
+      ]
+    },
+    "noslop": {
+      "status": "initialized",
+      "package": "@45ck/noslop"
+    },
+    "packageManager": {
+      "status": "available",
+      "command": "npm"
+    },
+    "setupProof": {
+      "status": "written",
+      "paths": [
+        ".skill-harness/setup-proof.json"
+      ]
+    }
+  },
+  "checks": {
+    "agentDocs": {
+      "status": "available",
+      "command": "npx agent-docs check"
+    },
+    "artifactHtmlPolicy": {
+      "status": "available",
+      "command": "node scripts/check-artifact-html-policy.mjs",
+      "path": "scripts/check-artifact-html-policy.mjs"
+    },
+    "artifactManifest": {
+      "status": "available",
+      "command": "node scripts/check-artifact-manifest.mjs",
+      "path": "scripts/check-artifact-manifest.mjs"
+    },
+    "artifactReviewOpen": {
+      "status": "available",
+      "command": "node scripts/open-artifact-review.mjs",
+      "path": "scripts/open-artifact-review.mjs"
+    },
+    "modelArtifactPolicy": {
+      "status": "available",
+      "command": "node scripts/check-model-artifact-policy.mjs",
+      "path": "scripts/check-model-artifact-policy.mjs"
+    },
+    "modelReviewGenerate": {
+      "status": "available",
+      "command": "node scripts/generate-model-review.mjs",
+      "path": "scripts/generate-model-review.mjs"
+    },
+    "setupProof": {
+      "status": "written",
+      "path": ".skill-harness/setup-proof.json"
+    }
+  },
+  "generatedPaths": [
+    ".claude/settings.json",
+    ".skill-harness/agent-stack.json",
+    ".skill-harness/project.json",
+    ".skill-harness/setup-proof.json",
+    "docs/artifacts/",
+    "docs/artifacts/source/models/",
+    "docs/artifacts/source/models/model-inventory.md",
+    "docs/artifacts/templates/model-diff-artifact.md",
+    "generated/review/",
+    "generated/review/models/",
+    "scripts/check-artifact-html-policy.mjs",
+    "scripts/check-artifact-manifest.mjs",
+    "scripts/check-model-artifact-policy.mjs",
+    "scripts/generate-model-review.mjs",
+    "scripts/open-artifact-review.mjs"
+  ],
+  "skipped": [
+    "beads"
+  ]
+}

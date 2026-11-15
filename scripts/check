@@ -1,0 +1,19 @@
+#!/bin/sh
+# noslop check script for Python
+TIER="${NOSLOP_TIER:-${1:-fast}}"
+
+case "$TIER" in
+  fast)
+    black --check . && ruff check . && typos
+    ;;
+  slow)
+    mypy . && pytest
+    ;;
+  ci)
+    black --check . && ruff check . && typos && mypy . && pytest
+    ;;
+  *)
+    echo "Unknown tier: $TIER — use: fast, slow, or ci" >&2
+    exit 1
+    ;;
+esac

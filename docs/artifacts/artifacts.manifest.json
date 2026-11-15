@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "rules": {
+    "editSourceFirst": true,
+    "generatedReviewIsCanonical": false,
+    "hashAlgorithm": "sha256"
+  },
+  "artifacts": []
+}
